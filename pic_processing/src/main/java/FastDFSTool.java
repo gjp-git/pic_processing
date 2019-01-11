@@ -71,6 +71,8 @@ public class FastDFSTool {
             //如果出现了IO异常应该销毁此连接
             pool.drop(connection);
             e.printStackTrace();
+            upload_path_list = this.uploadFile(image_path,image_list);
+
         }
         return upload_path_list;
     }

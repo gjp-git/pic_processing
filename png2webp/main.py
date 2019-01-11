@@ -36,7 +36,8 @@ if __name__ == "__main__":
 	print "file num : "+str(len(fileList))
 	
 	for file in fileList:
-		if (file.endswith('.png') or file.endswith('.jpg')) and not "pcl1" in file:
+		#if (file.endswith('.png') or file.endswith('.jpg')) and not "pcl1" in file:
+		if file.endswith('.jpg'):
 			q_data.put(file)
 
 	'''

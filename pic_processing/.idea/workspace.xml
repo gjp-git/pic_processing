@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c445acce-d9bd-4319-944a-ead2d80bbfa0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ScanDirUpload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pic_processing.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DeleteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DeleteFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FastDFSTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FastDFSTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HdfsClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HdfsClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ImageQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MutiUpload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MutiUpload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DeleteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DeleteFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FileListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FileListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/HdfsClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HdfsClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImageQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MutiUpload.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MutiUpload.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../png2webp/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../png2webp/consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FastDFSTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FastDFSTool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../png2webp/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../png2webp/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../png2webp/producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../png2webp/producer.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,6 +66,7 @@
     <session id="-1236676804">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.opened" value="2" />
@@ -84,23 +74,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="493" />
+          <entry key="java" value="523" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="493" />
+          <entry key="JAVA" value="523" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="conf" value="2" />
-          <entry key="java" value="4" />
+          <entry key="java" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="5" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -132,7 +122,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
+            <state relative-caret-position="593">
               <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -142,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MySQLConnectionPool.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ScanDirUpload.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+            <state relative-caret-position="23">
+              <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,32 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MutiUpload.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="120" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DeleteFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34485">
               <caret line="2299" column="85" selection-start-line="2299" selection-start-column="85" selection-end-line="2299" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FastDFSTool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -234,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/main/java/MutiUpload.java" />
         <option value="$PROJECT_DIR$/src/main/java/DeleteFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ScanDirUpload.java" />
         <option value="$PROJECT_DIR$/src/main/java/FastDFSTool.java" />
       </list>
     </option>
@@ -299,7 +269,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547186213651" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547204572742" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -326,16 +296,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.ScanDirUpload">
     <configuration name="DeleteFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DeleteFile" />
-      <module name="pic_processing" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileListener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FileListener" />
       <module name="pic_processing" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -355,6 +318,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ScanDirUpload" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ScanDirUpload" />
+      <module name="pic_processing" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="pic_processing" />
@@ -363,19 +333,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.FileListener" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.MutiUpload" />
       <item itemvalue="Application.DeleteFile" />
       <item itemvalue="Application.HdfsClient" />
+      <item itemvalue="Application.ScanDirUpload" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ScanDirUpload" />
+        <item itemvalue="Application.MutiUpload" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.DeleteFile" />
-        <item itemvalue="Application.MutiUpload" />
         <item itemvalue="Application.HdfsClient" />
-        <item itemvalue="Application.FileListener" />
       </list>
     </recent_temporary>
   </component>
@@ -397,16 +367,15 @@
       <workItem from="1546823343267" duration="28795000" />
       <workItem from="1547086665563" duration="21000" />
       <workItem from="1547099300273" duration="10822000" />
-      <workItem from="1547167465125" duration="7952000" />
+      <workItem from="1547167465125" duration="11822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75478000" />
+    <option name="totallyTimeSpent" value="79348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -417,7 +386,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32921812" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.24038461" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31868133" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -626,16 +595,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/fdfs_client.conf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/HdfsClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="113" column="71" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FileListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -656,6 +615,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/BlockingQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="179" column="17" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MySQLConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -666,16 +632,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/concurrent/BlockingQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-401">
-          <caret line="179" column="17" selection-start-line="179" selection-start-column="17" selection-end-line="179" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
+        <state relative-caret-position="593">
           <caret line="54" column="38" lean-forward="true" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -686,8 +645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FastDFSTool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
+        <state relative-caret-position="-1233">
+          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -703,8 +662,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MutiUpload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="120" />
+        <state relative-caret-position="315">
+          <caret line="55" column="4" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/HdfsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="113" column="71" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ScanDirUpload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
