@@ -7,30 +7,27 @@ from watchdog.observers.api import ObservedWatch
 
 
 class MyHandler(FileSystemEventHandler):
-	def __init__(self,name,queue,event):
+	def __init__(self,name,queue):
 			FileSystemEventHandler.__init__(self)
 			self.name=name
 			self.queue=queue
-			self.event=event
 			
-	def on_created(self, event):
+	def on_created(self):
 		#print "log file %s created!" % event.src_path
 		if event.src_path.endswith('.png') or event.src_path.endswith('.jpg'):
 			self.queue.put(event.src_path)
-			self.event.set()
 			#print self.name+" produced data "+ event.src_path
 			
 
 class Producer(threading.Thread):
-	def __init__(self,name,queue,event):
+	def __init__(self,name,queue):
 		threading.Thread.__init__(self)
 		self.name="Producer"+str(name)
 		self.queue=queue
-		self.event=event
  
 		
 	def run(self):
-		event_handler1 = MyHandler(self.name,self.queue,self.event)
+		event_handler1 = MyHandler(self.name,self.queue)
 		observer = Observer()
 		observer.schedule(event_handler1, path='D:\\cicv\\test data', recursive=True)
 		observer.start()

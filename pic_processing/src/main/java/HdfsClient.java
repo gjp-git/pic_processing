@@ -1,5 +1,9 @@
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -39,7 +43,7 @@ public class HdfsClient {
         // 要上传的文件所在的本地路径
         Path src = new Path(srcPath);
         // 要上传到hdfs的目标路径
-        Path dst = new Path("hdfs://192.168.3.94:9000"+dstPath);
+        Path dst = new Path(new StringBuilder().append("hdfs://192.168.3.94:9000").append(dstPath).toString());
         fs.copyFromLocalFile(src, dst);
 
 
@@ -78,6 +82,45 @@ public class HdfsClient {
         fs.rename(new Path("/a1"), new Path("/a2"));
     }
 
+    public List<String> getAllFiles(String rootPath, List<String> fileList){
+        File baseFile = new File(rootPath);
+        if (baseFile.isFile() || !baseFile.exists()) {
+            return fileList;
+        }
+        File[] files = baseFile.listFiles();
+        if ( files == null ) {
+            return fileList;
+        }
+        for ( File file : files ) {
+            if ( file.isDirectory() ) {
+                this.getAllFiles( file.getAbsolutePath(), fileList);
+            } else {
+                fileList.add( file.getAbsolutePath() );
+            }
+        }
 
+        return fileList;
+
+
+
+    }
+
+    public static void main(String[] args) {
+        HdfsClient hc = new HdfsClient();
+        String localPath = "D:\\cicv\\test data\\";
+        List<String> fileList = new LinkedList<String>();
+        File localDir = new File(localPath);
+        hc.getAllFiles(localPath,fileList);
+        System.out.println("files number = [" + fileList.size() + "]");
+        for(String s: fileList){
+            System.out.println("file = [" + s.replace(localPath,"") + "]");
+            try {
+                hc.addFileToHdfs(s.replace(localPath,""),s);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 
 }

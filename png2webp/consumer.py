@@ -6,27 +6,40 @@ from PIL import Image
 import os
 
 class Consumer(threading.Thread):
-	def __init__(self,name,queue,event,lock):
+	def __init__(self,name,queue):
 		threading.Thread.__init__(self)
 		self.name="Consumer"+str(name)
 		self.queue=queue
-		self.event=event
-		self.lock=lock
+
 	
 	def create_image(self,infile):
-		im = Image.open(infile)
 		s = infile.split('\\')
-		path = '\\'.join(s[:-1])+'_webp\\'
-		isExists=os.path.exists(path)
-		if not isExists:
+		dirPath = '\\'.join(s[:-1])+'_webp\\'
+		filePath = dirPath+s[-1][:-3]+'webp'
+		
+		if os.path.exists(filePath):
+			return
+		
+		if not os.path.exists(dirPath):
 			try:
-				os.makedirs(path)
+				os.makedirs(dirPath)
 			except Exception:
-				pass
-		im.save(path+s[-1][:-3]+'webp', "WEBP")
+				if os.path.exists(dirPath):
+					pass
+				else:
+					print self.name + " makedir failed : " + dirPath
+		try:
+			im = Image.open(infile)
+			im.save(filePath, "WEBP")
+		except Exception:
+			print self.name + " change type failed : " + infile
 	
 	def run(self):
 		while True:
+			data=self.queue.get()
+			self.create_image(data)
+			print self.name+" Spend data "+ str(data)
+			'''
 			if self.queue.empty():
 				self.event.wait()
 				if self.event.isSet():
@@ -38,3 +51,4 @@ class Consumer(threading.Thread):
 				self.lock.release()
 				self.create_image(data)
 				print self.name+" Spend data "+ str(data)
+			'''

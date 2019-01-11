@@ -54,7 +54,7 @@ public class MutiUpload {
      }
 
     public static void main(String[] args) {
-        String rootDir = "D:\\cicv\\test data";
+        String rootDir = "D:\\cicv\\AAAdata";
         // 轮询间隔 1 秒
         long interval = TimeUnit.SECONDS.toMillis(1);
         // 创建过滤器
@@ -111,6 +111,7 @@ public class MutiUpload {
 
                     try {
                         filePath = bq.take();
+                        //System.out.println("args = [" + filePath + "]");
                         String[] strs = filePath.split(System.getProperty("file.separator").replace("\\","\\\\"));
                         city = strs[strs.length-3].split("_")[0];
                         type = strs[strs.length-2];
@@ -125,6 +126,7 @@ public class MutiUpload {
                         //System.out.println("th" + index + "," + filePath + ","+storePath+ ","+city+ ","+type+ ","+timeStamp);
                     } catch (InterruptedException | SQLException e) {
                         e.printStackTrace();
+                        System.out.println("th" + index + "," + filePath + ","+storePath+ ","+city+ ","+type+ ","+timeStamp);
                     }
                 }
             });
