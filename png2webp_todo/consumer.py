@@ -37,5 +37,5 @@ class Consumer(threading.Thread):
 		while True:
 			data=self.queue.get()
 			self.create_image(data)
-			print self.name+" Spend data "+ str(data)
+			#print self.name+" Spend data "+ str(data)
 

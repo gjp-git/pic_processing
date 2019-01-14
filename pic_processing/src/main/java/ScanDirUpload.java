@@ -49,68 +49,76 @@ public class ScanDirUpload {
         final ScanDirUpload scanDirUpload = new ScanDirUpload();
         final FastDFSTool fastDFSTool = new FastDFSTool();
 
-        int threadCount = 5;
-        //String localPath = "D:\\cicv\\BBB new data\\";
-        String localPath = "D:\\cicv\\AAAdata\\";
+        int threadCount = 10;
 
-        File localDir = new File(localPath);
-        String[] fileList = localDir.list();
+        String [] localPaths = {"D:\\cicv\\AAAdata\\", "D:\\cicv\\BBB new data\\"};
+        String [] toUploadDirs = {"\\image_webp\\", "\\image_marked_webp\\", "\\pcl1_image\\"};
+        String [] toUploadDirsResult = {"\\image_webp_list.csv","\\image_marked_webp_list.csv","\\pcl1_image_list.csv"};
 
-
-        StringBuffer resultPath = new StringBuffer(localPath);
-        File resultFile;
-        FileWriter resultWritter = null;
-        StringBuffer imagePath = new StringBuffer(localPath);
-        File imageDir;
-        String[] imageList;
-        List<List<String>> subImageList = null;
+        for(String localPath: localPaths){
+            File localDir = new File(localPath);
+            String[] fileList = localDir.list();
 
 
-        assert fileList != null;
-        //for(String file: fileList1){
-        for (String file : fileList) {
+            StringBuffer resultPath = new StringBuffer(localPath);
+            File resultFile;
+            FileWriter resultWritter = null;
+            StringBuffer imagePath = new StringBuffer(localPath);
+            File imageDir;
+            String[] imageList;
+            List<List<String>> subImageList = null;
 
-            System.out.println("dir = [" + file + "]");
-            resultFile = new File(resultPath.append(file).append("\\pcl1_imageList.csv").toString());
-            try {
-                if (!resultFile.exists()) {
-                    resultFile.createNewFile();
+
+            assert fileList != null;
+            for (String file : fileList) {
+                for(int dirIndex=0;dirIndex<toUploadDirs.length;dirIndex++){
+                    System.out.println("dir = [" + localPaths + ","  + file + "," + toUploadDirs[dirIndex] + "," + "]");
+                    resultFile = new File(resultPath.append(file).append(toUploadDirsResult[dirIndex]).toString());
+                    try {
+                        if (!resultFile.exists()) {
+                            resultFile.createNewFile();
+                        }
+                        resultWritter = new FileWriter(resultFile);
+                        imagePath.append(file);
+                        imagePath.append(toUploadDirs[dirIndex]);
+                        imageDir = new File(imagePath.toString());
+                        imageList = imageDir.list();
+
+                        assert imageList != null;
+                        subImageList = scanDirUpload.splitAry(imageList, threadCount);
+                        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(threadCount);
+                        final CountDownLatch latch = new CountDownLatch(threadCount);
+                        for (int i = 0; i < threadCount; i++) {
+                            final int index = i;
+                            final List<String> pathList = subImageList.get(index);
+                            final String imgPath = imagePath.toString();
+                            fixedThreadPool.execute(() -> {
+                                scanDirUpload.uploadFile(pathList, fastDFSTool, imgPath, resultList);
+                                latch.countDown();
+                            });
+                        }
+                        latch.await();
+                        Collections.sort(resultList);
+                        //System.out.println("resultList = [" + resultList.size() + "]");
+                        for (String line : resultList) {
+                            //System.out.println("line = [" + line + "]");
+                            resultWritter.write(line + "\n");
+                        }
+                        resultWritter.flush();
+                        resultWritter.close();
+                    } catch (IOException | InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    resultList.removeAllElements();
+                    resultPath = new StringBuffer(localPath);
+                    imagePath = new StringBuffer(localPath);
                 }
-                resultWritter = new FileWriter(resultFile);
-                imagePath.append(file);
-                imagePath.append("\\pcl1_image\\");
-                imageDir = new File(imagePath.toString());
-                imageList = imageDir.list();
 
-                assert imageList != null;
-                subImageList = scanDirUpload.splitAry(imageList, threadCount);
-                ExecutorService fixedThreadPool = Executors.newFixedThreadPool(threadCount);
-                final CountDownLatch latch = new CountDownLatch(threadCount);
-                for (int i = 0; i < threadCount; i++) {
-                    final int index = i;
-                    final List<String> pathList = subImageList.get(index);
-                    final String imgPath = imagePath.toString();
-                    fixedThreadPool.execute(() -> {
-                        scanDirUpload.uploadFile(pathList, fastDFSTool, imgPath, resultList);
-                        latch.countDown();
-                    });
-                }
-                latch.await();
-                Collections.sort(resultList);
-                //System.out.println("resultList = [" + resultList.size() + "]");
-                for (String line : resultList) {
-                    //System.out.println("line = [" + line + "]");
-                    resultWritter.write(line + "\n");
-                }
-                resultWritter.flush();
-                resultWritter.close();
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
+
             }
-            resultList.removeAllElements();
-            resultPath = new StringBuffer(localPath);
-            imagePath = new StringBuffer(localPath);
-
         }
+        System.out.println("Finish!");
+        fastDFSTool.close();
+
     }
 }

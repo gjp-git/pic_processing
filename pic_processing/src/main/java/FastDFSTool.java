@@ -167,6 +167,11 @@ public class FastDFSTool {
         return i;
     }
 
+    public void close(){
+        pool.closeAll();
+    }
+
+
     private byte[] getBytes(String filePath){
         byte[] buffer = null;
         try {
