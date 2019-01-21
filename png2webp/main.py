@@ -4,6 +4,7 @@ import producer
 import consumer
 import threading
 import Queue
+import sys
 
 import os
 
@@ -20,6 +21,12 @@ def getAllFiles(path, list):
 	return list
 	
 if __name__ == "__main__":
+	
+	if sys.argv[1]!=null and os.path.isdir(sys.argv[1]):
+		rootPath = sys.argv[1]
+	else:
+		print u"缺少参数：目标文件夹"
+		exit(0)
 	#初始化
 	q_data=Queue.Queue()
 	t_num = 10#待测试最优线程数
@@ -28,7 +35,6 @@ if __name__ == "__main__":
 		c=consumer.Consumer(each,q_data)
 		c.start()
 		
-	rootPath = 'D:\\cicv\\AAAdata'
 	fileList = []
 	
 	getAllFiles(rootPath, fileList)
@@ -36,8 +42,7 @@ if __name__ == "__main__":
 	print "file num : "+str(len(fileList))
 	
 	for file in fileList:
-		#if (file.endswith('.png') or file.endswith('.jpg')) and not "pcl1" in file:
-		if file.endswith('.jpg'):
+		if (file.endswith('.png') or file.endswith('.jpg')) and not "pcl1" in file:
 			q_data.put(file)
 
 	'''
