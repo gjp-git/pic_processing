@@ -22,7 +22,7 @@ def getAllFiles(path, list):
 	
 if __name__ == "__main__":
 	
-	if sys.argv[1]!=null and os.path.isdir(sys.argv[1]):
+	if len(sys.argv)>1 and sys.argv[1]!=None and os.path.isdir(sys.argv[1]):
 		rootPath = sys.argv[1]
 	else:
 		print u"缺少参数：目标文件夹"
